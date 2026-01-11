@@ -1548,7 +1548,7 @@ function ItemList({ items }: { items: Item[] }) {
   
   return (
     <div>
-      <p>Total: ${total}</p>
+      <p>Total: \${total}</p>
       <ul>
         {items.map(item => (
           <ItemComponent key={item.id} item={item} />
@@ -1560,7 +1560,7 @@ function ItemList({ items }: { items: Item[] }) {
 
 function ItemComponent({ item }: { item: Item }) {
   // TODO: Memoize this component
-  return <li>{item.name} - ${item.price}</li>;
+  return <li>{item.name} - \${item.price}</li>;
 }`}
         solution={`import { useState, useMemo, useCallback, memo } from 'react';
 
@@ -1583,7 +1583,7 @@ function ItemList({ items }: { items: Item[] }) {
 
   return (
     <div className="p-6">
-      <p className="text-xl font-bold mb-4">Total: ${total.toFixed(2)}</p>
+      <p className="text-xl font-bold mb-4">Total: \${total.toFixed(2)}</p>
       <ul className="space-y-2">
         {items.map(item => (
           <MemoizedItemComponent 
@@ -1610,7 +1610,7 @@ const MemoizedItemComponent = memo(function ItemComponent({
       onClick={() => onClick(item.id)}
       className="p-2 bg-gray-100 rounded cursor-pointer hover:bg-gray-200"
     >
-      {item.name} - ${item.price.toFixed(2)}
+      {item.name} - \${item.price.toFixed(2)}
     </li>
   );
 });

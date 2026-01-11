@@ -980,7 +980,7 @@ export default async function ProductsPage() {
           <div key={product.id} className="border rounded-lg p-4">
             <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded mb-4" />
             <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-            <p className="text-2xl font-bold">${product.price}</p>
+            <p className="text-2xl font-bold">\${product.price}</p>
           </div>
         ))}
       </div>
@@ -1188,7 +1188,7 @@ export default function InteractiveChart({ data }: { data: DashboardData }) {
           >
             {selectedIndex === index && (
               <div className="text-center text-white font-bold">
-                {data.labels[index]}: ${value}
+                {data.labels[index]}: \${value}
               </div>
             )}
           </div>
